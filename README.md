@@ -1,3 +1,3 @@
-# finflix
+## Video Library Backend
 
-FinFlix is a video Library for Finance Enthusiast (Under construction)
+This folder contains the Mock Backend created for Video Library App. It contains different API end-points and database configuration for building Video Library; so that you can focus on building Frontend.

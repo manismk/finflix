@@ -17,6 +17,11 @@ body {
   min-height: 100vh;
 }
 
+.container--100 {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
 .grid {
   gap: 2rem;
 }

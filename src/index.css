@@ -2,6 +2,8 @@
 
 .dark--theme {
   --bg-color: #082032;
+  --accent-color-dark: #2c394b;
+  --accent-color-light: #334756;
   --primary--color: #ff4c29;
   --text-color: #d9d9d9;
 }

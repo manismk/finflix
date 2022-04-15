@@ -41,7 +41,7 @@
     max-height: 5rem;
     width: 100%;
     padding-top: 0;
-    overflow-y: unset;
+    overflow: hidden;
     margin: 0;
     justify-content: space-between;
     align-items: center;

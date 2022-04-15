@@ -3,6 +3,45 @@
   min-width: 20rem;
 }
 
+.thumbnail--container {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.thumbnail--container:hover img {
+  opacity: 0.5;
+}
+
+.play--button {
+  transition: 0.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.play--button svg {
+  font-size: 2.5rem;
+  color: var(--white);
+}
+
+.thumbnail--container:hover .play--button {
+  display: block;
+}
+
+.video--duration {
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  background-color: var(--black);
+  color: var(--white);
+  font-weight: 600;
+}
+
 .video--footer--container {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;

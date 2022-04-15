@@ -8,9 +8,8 @@ export const Navbar = () => {
     <>
       <header className="nav--container">
         <div className="logo">
-          <Link to="/app/notes">FinFlix</Link>
+          <Link to="/">FinFlix</Link>
         </div>
-
         <Link to="/profile" className="nav--item">
           <Person className="icon" />
           <span>Profile</span>

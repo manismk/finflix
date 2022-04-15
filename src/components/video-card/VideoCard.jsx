@@ -1,4 +1,4 @@
-import { MoreVert } from "@mui/icons-material";
+import { MoreVert, PlayArrow } from "@mui/icons-material";
 import "./videoCard.css";
 
 export const VideoCard = () => {
@@ -10,6 +10,10 @@ export const VideoCard = () => {
           src="https://img.youtube.com/vi/tHxwyWnNu0c/mqdefault.jpg"
           alt="thumbnail"
         />
+        <div className="play--button">
+          <PlayArrow />
+        </div>
+        <span className="video--duration">1:50:60</span>
       </div>
       <div className="video--footer--container">
         <img

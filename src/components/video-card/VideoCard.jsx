@@ -19,7 +19,7 @@ export const VideoCard = () => {
         <img
           src="https://randomuser.me/api/portraits/men/41.jpg"
           alt="Randomuser"
-          className="avatar avatar--circle avatar--sm"
+          className="avatar avatar--circle avatar--xs"
         />
         <div className="video--card--content">
           <div className="video--card--title">Random Video</div>

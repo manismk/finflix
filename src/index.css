@@ -27,3 +27,17 @@ body {
 .grid {
   gap: 2rem;
 }
+
+.main-container {
+  margin: 1rem;
+  margin-left: 13rem;
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-container {
+    margin: 1rem;
+    padding-bottom: 5rem;
+  }
+}

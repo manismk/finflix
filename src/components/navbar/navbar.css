@@ -1,0 +1,32 @@
+.nav--container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--accent-color-dark);
+  color: var(--text-color);
+  z-index: 25;
+  min-height: fit-content;
+}
+
+.logo a {
+  text-decoration: none;
+  font-family: "Pacifico", cursive;
+  white-space: nowrap;
+  color: var(--primary--color);
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+svg {
+  color: var(--text-color);
+}
+
+.nav--item {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+}

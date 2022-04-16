@@ -5,3 +5,9 @@ export const routes = {
   PLAYLIST_PAGE: "/playlist",
   HISTORY_PAGE: "/history",
 };
+
+export const videoContextConstant = {
+  INITIAL_LOAD: "INITIAL_LOAD",
+  CATEGORY_CHANGE: "CATEGORY_CHANGE",
+  LOADING_CHANGE: "LOADING_CHANGE",
+};

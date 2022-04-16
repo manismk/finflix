@@ -5,7 +5,9 @@
   --accent-color-dark: #2c394b;
   --accent-color-light: #334756;
   --primary--color: #ff4c29;
+  --primary--color--light: #ffedd5;
   --text-color: #d9d9d9;
+  --error-color: #fca5a5;
 }
 
 body {
@@ -33,6 +35,19 @@ body {
   margin-left: 13rem;
   margin-bottom: 0;
   padding-bottom: 2rem;
+}
+
+.btn--primary {
+  background-color: var(--primary--color);
+}
+
+.btn--primary:hover {
+  background-color: var(--primary--color--light);
+  color: var(--primary--color);
+}
+
+.primary-color {
+  color: var(--primary--color);
 }
 
 @media only screen and (max-width: 600px) {

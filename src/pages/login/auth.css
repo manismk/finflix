@@ -1,14 +1,14 @@
 .login--container {
   max-width: 25rem;
   padding: 2rem 1rem;
-  background-color: var(--accent-color-dark);
+  background-color: var(--accent-color-light);
   margin: 5rem auto;
   border-radius: 5px;
   box-shadow: 2px 3px 10px 0px rgb(0 0 0 / 20%);
 }
 
 .login--container .input--label {
-  background-color: var(--accent-color-dark);
+  background-color: var(--accent-color-light);
   color: var(--text-color);
 }
 

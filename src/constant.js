@@ -6,6 +6,7 @@ export const routes = {
   HISTORY_PAGE: "/history",
   LOGIN_PAGE: "/login",
   SIGNUP_PAGE: "/signUp",
+  PROFILE_PAGE: "/profile",
 };
 
 export const videoContextConstant = {

@@ -4,6 +4,8 @@ export const routes = {
   WATCH_LATER_PAGE: "/watch-later",
   PLAYLIST_PAGE: "/playlist",
   HISTORY_PAGE: "/history",
+  LOGIN_PAGE: "/login",
+  SIGNUP_PAGE: "/signUp",
 };
 
 export const videoContextConstant = {

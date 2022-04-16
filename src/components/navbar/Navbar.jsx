@@ -6,7 +6,7 @@ import "./navbar.css";
 
 export const Navbar = () => {
   const { authData } = useAuth();
-  console.log(authData);
+
   return (
     <>
       <header className="nav--container">

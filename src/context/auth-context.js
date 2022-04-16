@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
         }
       } catch (e) {
         setAuthData((prev) => ({ ...prev, isLoggedIn: false }));
-        console.log("Error in Login", e);
+        console.error("Error in Login", e);
       }
     })();
   };
@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
         }
       } catch (e) {
         setAuthData((prev) => ({ ...prev, isLoggedIn: false }));
-        console.log("Error in signup", e);
+        console.error("Error in signup", e);
       }
     })();
   };

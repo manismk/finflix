@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Navbar } from "./components";
 import { routes } from "./constant";
-import { Login, VideoListing } from "./pages/";
+import { Login, SignUp, VideoListing } from "./pages/";
 import MockMan from "mockman-js";
 
 function App() {
@@ -13,6 +13,8 @@ function App() {
           <Routes>
             <Route path={routes.EXPLORE_PAGE} element={<VideoListing />} />
             <Route path={routes.LOGIN_PAGE} element={<Login />} />
+            <Route path={routes.SIGNUP_PAGE} element={<SignUp />} />
+
             <Route path={"/mock"} element={<MockMan />} />
           </Routes>
         </div>

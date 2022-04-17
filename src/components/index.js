@@ -5,3 +5,4 @@ export { Loader } from "./loader/Loader";
 export { Filters } from "./filters/Filters";
 export { InputTextBox } from "./input/InputTextBox";
 export { InputPasswordBox } from "./input/InputPasswordBox";
+export { HorizontalCard } from "./horizontal-card/HorizontalCard";

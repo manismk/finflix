@@ -1,10 +1,16 @@
 import { MoreVert, PlayArrow } from "@mui/icons-material";
 import "./videoCard.css";
+import { useNavigate } from "react-router-dom";
 
 export const VideoCard = ({ videoDetails }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="card video-card">
-      <div className="thumbnail--container">
+      <div
+        className="thumbnail--container"
+        onClick={() => navigate(`/videos/${videoDetails._id}`)}
+      >
         <img
           className="img--res"
           src={`https://img.youtube.com/vi/${videoDetails._id}/mqdefault.jpg`}

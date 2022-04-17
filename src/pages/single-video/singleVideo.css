@@ -1,0 +1,100 @@
+.grid--70--30 {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: 1rem;
+}
+
+.embed--video {
+  width: 100%;
+  min-height: 50vh;
+  max-height: 80vh;
+  aspect-ratio: 16/9;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.video--container {
+  background-color: var(--accent-color-dark);
+  border-radius: 5px;
+  width: 100%;
+  min-width: 0;
+}
+
+.video--content--container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.video--action--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-color);
+  padding-bottom: 1rem;
+  gap: 1rem;
+  margin: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.video--title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.video--creator {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.video--count {
+  font-size: 0.85rem;
+}
+
+.action--controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.action--title {
+  color: var(--text-color);
+}
+
+.btn--fab {
+  background-color: transparent;
+  border-color: var(--text-color);
+}
+
+.sidebar--video--container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.single--sidebar--container {
+  margin-top: 3rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .grid--70--30 {
+    grid-template-columns: 1fr;
+  }
+  .embed--video {
+    min-height: 40vh;
+  }
+  .single--sidebar--container {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .embed--video {
+    min-height: 35vh;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .embed--video {
+    min-height: 25vh;
+  }
+}

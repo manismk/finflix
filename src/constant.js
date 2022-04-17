@@ -7,6 +7,7 @@ export const routes = {
   LOGIN_PAGE: "/login",
   SIGNUP_PAGE: "/signUp",
   PROFILE_PAGE: "/profile",
+  SINGLE_PAGE: "/videos/:videoId",
 };
 
 export const videoContextConstant = {

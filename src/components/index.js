@@ -6,3 +6,4 @@ export { Filters } from "./filters/Filters";
 export { InputTextBox } from "./input/InputTextBox";
 export { InputPasswordBox } from "./input/InputPasswordBox";
 export { HorizontalCard } from "./horizontal-card/HorizontalCard";
+export { RequiresAuth } from "./requires-auth/RequiresAuth";

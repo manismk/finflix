@@ -10,8 +10,12 @@
   overflow: hidden;
 }
 
+.thumbnail--container .img--res {
+  aspect-ratio: 16/9;
+}
+
 .thumbnail--container:hover img {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .play--button {

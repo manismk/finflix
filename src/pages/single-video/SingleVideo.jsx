@@ -5,7 +5,7 @@ import {
   PlaylistAdd,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { HorizontalCard, Loader } from "../../components";
 import { useVideos } from "../../context";
 import {
@@ -27,6 +27,7 @@ export const SingleVideo = () => {
     creatorVideos: [],
     currentVideo: {},
   });
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     setData((prev) => ({
@@ -64,9 +65,7 @@ export const SingleVideo = () => {
                 className="embed--video "
                 src={`https://www.youtube.com/embed/${data.video?._id}`}
               ></embed>
-              <div className="video--title m-t-1 m-l-1">
-                {data.video?.title}
-              </div>
+              <h2 className="video--title m-t-1 m-l-1">{data.video?.title}</h2>
               <div className="video--action--container">
                 <div className="video--content--container ">
                   <img
@@ -92,6 +91,26 @@ export const SingleVideo = () => {
                     <p className="action--title">Playlist </p>
                   </button>
                 </div>
+              </div>
+              <h2 className="video--title  m-h-1">Description</h2>
+              <div className="video--description">
+                {data.video?.description?.length >= 200 ? (
+                  <>
+                    <span>
+                      {showMore
+                        ? data.video?.description
+                        : data.video?.description.slice(0, 200)}
+                    </span>
+                    <button
+                      className="btn--see"
+                      onClick={() => setShowMore((prev) => !prev)}
+                    >
+                      {showMore ? "...see less" : "...see more"}
+                    </button>
+                  </>
+                ) : (
+                  data.video?.description
+                )}
               </div>
             </div>
           </div>

@@ -92,14 +92,14 @@ export const SingleVideo = () => {
                   </button>
                 </div>
               </div>
-              <h2 className="video--title  m-h-1">Description</h2>
+              <h2 className="heading--4 m-l-1">Description</h2>
               <div className="video--description">
-                {data.video?.description?.length >= 200 ? (
+                {data.video?.description?.length >= 250 ? (
                   <>
                     <span>
                       {showMore
                         ? data.video?.description
-                        : data.video?.description.slice(0, 200)}
+                        : data.video?.description.slice(0, 150)}
                     </span>
                     <button
                       className="btn--see"

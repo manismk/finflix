@@ -3,11 +3,12 @@ import {
   ThumbUpOutlined,
   WatchLaterOutlined,
   PlaylistAdd,
+  ThumbUp,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { HorizontalCard, Loader } from "../../components";
-import { useVideos } from "../../context";
+import { useAuth, useLikes, useVideos } from "../../context";
 import {
   getSingleVideo,
   getRecommendedVideos,
@@ -19,13 +20,17 @@ import "./singleVideo.css";
 export const SingleVideo = () => {
   const params = useParams();
   const { videoState } = useVideos();
+  const { likedVideos, likeVideo, removeLike, likeLoading } = useLikes();
+  const { authData } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [data, setData] = useState({
     video: {},
     isLoading: false,
     recommendedVideos: [],
     creatorVideos: [],
-    currentVideo: {},
+    isLiked: false,
   });
   const [showMore, setShowMore] = useState(false);
 
@@ -37,11 +42,8 @@ export const SingleVideo = () => {
         params.videoId
       ),
       creatorVideos: getCreatorVideos(videoState.videos, params.videoId),
-      currentVideo: videoState.videos.find(
-        (video) => video._id === params.videoId
-      ),
     }));
-  }, [videoState.videos, params]);
+  }, [videoState.videos, params.videoId]);
 
   useEffect(() => {
     setData((prev) => ({ ...prev, isLoading: true }));
@@ -50,6 +52,12 @@ export const SingleVideo = () => {
       setData((prev) => ({ ...prev, video, isLoading: false }));
     })();
   }, [params]);
+
+  useEffect(() => {
+    likedVideos.find((likedVideo) => likedVideo._id === params.videoId)
+      ? setData((prev) => ({ ...prev, isLiked: true }))
+      : setData((prev) => ({ ...prev, isLiked: false }));
+  }, [likedVideos, params]);
 
   return (
     <div className="grid--70--30 m-v-2">
@@ -78,10 +86,36 @@ export const SingleVideo = () => {
                   </div>
                 </div>
                 <div className="action--controls">
-                  <button className="btn icon--btn  video--action">
-                    <ThumbUpOutlined />
-                    <p className="action--title">Like</p>
-                  </button>
+                  {data.isLiked ? (
+                    <button
+                      className={`btn icon--btn  video--action active ${
+                        likeLoading ? "btn--disabled" : ""
+                      }`}
+                      onClick={() => removeLike(data.video._id)}
+                      disabled={likeLoading}
+                    >
+                      <ThumbUp />
+                      <p className="action--title">Liked</p>
+                    </button>
+                  ) : (
+                    <button
+                      className={`btn icon--btn  video--action ${
+                        likeLoading ? "btn--disabled" : ""
+                      }`}
+                      onClick={() =>
+                        authData.isLoggedIn
+                          ? likeVideo(data.video)
+                          : navigate("/login", {
+                              state: { from: location },
+                              replace: true,
+                            })
+                      }
+                      disabled={likeLoading}
+                    >
+                      <ThumbUpOutlined />
+                      <p className="action--title">Like</p>
+                    </button>
+                  )}
                   <button className="btn icon--btn  video--action">
                     <WatchLaterOutlined />
                     <p className="action--title">Watch Later</p>
@@ -121,7 +155,7 @@ export const SingleVideo = () => {
                 <HorizontalCard video={video} key={video._id} />
               ))}
             </div>
-            <h2 className="m-t-1">{`More Form ${data.currentVideo?.creator}`}</h2>
+            <h2 className="m-t-1">{`More Form ${data.video?.creator}`}</h2>
             <div className="sidebar--video--container m-v-1">
               {data.creatorVideos.map((video) => (
                 <HorizontalCard video={video} key={video._id} />

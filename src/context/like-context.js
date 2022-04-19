@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useAuth } from "./";
+import { toast } from "react-toastify";
 
 const { createContext, useContext, useState, useEffect } = require("react");
 
@@ -23,6 +24,7 @@ const LikesProvider = ({ children }) => {
         } catch (e) {
           setLikedVideos([]);
           console.error("Error in Getting Likes", e);
+          toast.error("Something Went Wrong. Try again");
         }
       })();
     } else {
@@ -47,6 +49,7 @@ const LikesProvider = ({ children }) => {
       } else throw new Error(`Unhandled response status ${status}`);
     } catch (e) {
       console.error("Error in Liking the video", e);
+      toast.error("Something Went Wrong. Try again");
     } finally {
       setLikeLoading(false);
     }
@@ -66,6 +69,7 @@ const LikesProvider = ({ children }) => {
       } else throw new Error(`Unhandled response status ${status}`);
     } catch (e) {
       console.error("Error in removing the like", e);
+      toast.error("Something Went Wrong. Try again");
     } finally {
       setLikeLoading(false);
     }

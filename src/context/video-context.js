@@ -10,6 +10,7 @@ const VideoProvider = ({ children }) => {
     videos: [],
     category: "all",
     isLoading: false,
+    allVideos: [],
   });
 
   useEffect(() => {

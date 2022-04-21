@@ -4,7 +4,7 @@ import { routes } from "../../constant";
 import { useLikes } from "../../context";
 
 export const Likes = () => {
-  const { likedVideos } = useLikes();
+  const { likedVideos, removeLike } = useLikes();
   return (
     <>
       <h1 className="text--center m-v-2">Liked Videos({likedVideos.length})</h1>
@@ -14,7 +14,9 @@ export const Likes = () => {
             <VideoCard
               videoDetails={likedVideo}
               key={likedVideo._id}
-              isFromLiked={true}
+              showDelete={true}
+              from={"Liked"}
+              deleteCallBack={() => removeLike(likedVideo._id)}
             />
           ))}
         </div>

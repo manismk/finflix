@@ -1,11 +1,14 @@
 import { Delete, MoreVert, PlayArrow } from "@mui/icons-material";
 import "./videoCard.css";
 import { useNavigate } from "react-router-dom";
-import { useLikes } from "../../context";
 
-export const VideoCard = ({ videoDetails, isFromLiked }) => {
+export const VideoCard = ({
+  videoDetails,
+  showDelete,
+  deleteCallBack,
+  from,
+}) => {
   const navigate = useNavigate();
-  const { removeLike } = useLikes();
 
   return (
     <div className="card video-card">
@@ -34,11 +37,11 @@ export const VideoCard = ({ videoDetails, isFromLiked }) => {
           <div className="video--card--creator">{videoDetails.creator}</div>
           <div className="video--card--count">200K viwes</div>
         </div>
-        {isFromLiked ? (
+        {showDelete ? (
           <button
             className="btn icon--btn"
-            title="Delete From Liked"
-            onClick={() => removeLike(videoDetails._id)}
+            title={`Delete ${from}`}
+            onClick={deleteCallBack}
           >
             <Delete />
           </button>

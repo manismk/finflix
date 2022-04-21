@@ -38,12 +38,12 @@ export const SingleVideo = () => {
     setData((prev) => ({
       ...prev,
       recommendedVideos: getRecommendedVideos(
-        videoState.videos,
+        videoState.allVideos,
         params.videoId
       ),
-      creatorVideos: getCreatorVideos(videoState.videos, params.videoId),
+      creatorVideos: getCreatorVideos(videoState.allVideos, params.videoId),
     }));
-  }, [videoState.videos, params.videoId]);
+  }, [videoState.allVideos, params.videoId]);
 
   useEffect(() => {
     setData((prev) => ({ ...prev, isLoading: true }));

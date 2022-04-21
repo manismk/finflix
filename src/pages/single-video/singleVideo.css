@@ -57,8 +57,13 @@
   gap: 1rem;
 }
 
-.action--title {
+.icon--btn {
   color: var(--text-color);
+}
+
+.action--title,
+.icon--btn svg {
+  color: inherit;
 }
 
 .btn--fab {
@@ -88,6 +93,11 @@
 
 .video--description {
   margin: 0.2rem 1rem;
+}
+
+.icon--btn:hover,
+.video--action.active {
+  color: var(--primary--color);
 }
 
 @media only screen and (max-width: 900px) {

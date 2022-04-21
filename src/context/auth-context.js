@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const getInitialData = () => {
   const userLocalData = JSON.parse(localStorage.getItem("finFlixUser"));
@@ -36,10 +37,14 @@ const AuthProvider = ({ children }) => {
 
           navigate(from, { replace: true });
           setAuthData((prev) => ({ ...prev, isLoggedIn: true }));
+          toast.success(
+            `Welcome Back ${data.foundUser.firstName} ${data.foundUser.lastName}`
+          );
         }
       } catch (e) {
         setAuthData((prev) => ({ ...prev, isLoggedIn: false }));
         console.error("Error in Login", e);
+        toast.error("Something Went Wrong. Try again");
       }
     })();
   };
@@ -61,10 +66,14 @@ const AuthProvider = ({ children }) => {
             userData: data.createdUser,
           }));
           navigate(from, { replace: true });
+          toast.success(
+            `Let's enhance Your Financial Knowledge ${data.createdUser.firstName} ${data.createdUser.lastName} `
+          );
         }
       } catch (e) {
         setAuthData((prev) => ({ ...prev, isLoggedIn: false }));
         console.error("Error in signup", e);
+        toast.error("Something Went Wrong. Try again");
       }
     })();
   };

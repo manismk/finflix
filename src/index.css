@@ -8,6 +8,8 @@
   --primary--color--light: #ffedd5;
   --text-color: #d9d9d9;
   --error-color: #fca5a5;
+  --toastify-color-light: #2c394b;
+  --toastify-text-color-light: #d9d9d9;
 }
 
 body {

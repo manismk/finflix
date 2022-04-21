@@ -1,6 +1,7 @@
 import { Delete, MoreVert, PlayArrow } from "@mui/icons-material";
 import "./videoCard.css";
 import { useNavigate } from "react-router-dom";
+import { useHistory } from "../../context/";
 
 export const VideoCard = ({
   videoDetails,
@@ -9,12 +10,16 @@ export const VideoCard = ({
   from,
 }) => {
   const navigate = useNavigate();
+  const { addToHistory } = useHistory();
 
   return (
     <div className="card video-card">
       <div
         className="thumbnail--container"
-        onClick={() => navigate(`/videos/${videoDetails._id}`)}
+        onClick={() => {
+          navigate(`/videos/${videoDetails._id}`);
+          addToHistory(videoDetails);
+        }}
       >
         <img
           className="img--res"

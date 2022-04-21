@@ -1,3 +1,20 @@
+.clear--container,
+.clear--container .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear--container .btn {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--text-color);
+}
+
+.clear--container .btn:hover {
+  background-color: var(--primary--color);
+  color: var(--text-color);
+}
+
 @media only screen and (max-width: 1250px) {
   .grid.grid--3--cols {
     grid-template-columns: repeat(2, 1fr);

@@ -7,3 +7,4 @@ export { InputTextBox } from "./input/InputTextBox";
 export { InputPasswordBox } from "./input/InputPasswordBox";
 export { HorizontalCard } from "./horizontal-card/HorizontalCard";
 export { RequiresAuth } from "./requires-auth/RequiresAuth";
+export { VideoCardMenu } from "./video-card-menu/VideoCardMenu";

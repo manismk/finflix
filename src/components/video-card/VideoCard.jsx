@@ -2,6 +2,8 @@ import { Delete, MoreVert, PlayArrow } from "@mui/icons-material";
 import "./videoCard.css";
 import { useNavigate } from "react-router-dom";
 import { useHistory } from "../../context/";
+import { VideoCardMenu } from "../";
+import { useState } from "react";
 
 export const VideoCard = ({
   videoDetails,
@@ -11,9 +13,10 @@ export const VideoCard = ({
 }) => {
   const navigate = useNavigate();
   const { addToHistory } = useHistory();
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="card video-card">
+    <div className="card video-card" onMouseLeave={() => setShowMenu(false)}>
       <div
         className="thumbnail--container"
         onClick={() => {
@@ -51,11 +54,15 @@ export const VideoCard = ({
             <Delete />
           </button>
         ) : (
-          <button className="btn icon--btn">
+          <button
+            className="btn icon--btn"
+            onClick={() => setShowMenu((prev) => !prev)}
+          >
             <MoreVert />
           </button>
         )}
       </div>
+      {showMenu && <VideoCardMenu />}
     </div>
   );
 };

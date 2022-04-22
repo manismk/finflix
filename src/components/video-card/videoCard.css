@@ -2,6 +2,7 @@
   background-color: var(--accent-color-dark);
   min-width: 20rem;
   max-width: 23rem;
+  position: relative;
 }
 
 .thumbnail--container {
@@ -74,4 +75,28 @@
 .video--card--creator,
 .video--card--count {
   font-size: 0.7rem;
+}
+
+.video--card--menu {
+  position: absolute;
+  right: 2rem;
+  bottom: 0.3rem;
+  width: 55%;
+  background-color: var(--accent-color-light);
+  padding: 0.2rem;
+}
+
+.video--card--menu .btn {
+  font-size: 1rem;
+  padding: 0.3rem;
+  margin-bottom: 0.2rem;
+  border-color: var(--text-color);
+  background-color: inherit;
+  color: var(--text-color);
+}
+
+.video--card--menu .btn:hover {
+  border-color: var(--primary--color);
+  background-color: var(--primary--color);
+  font-weight: 700;
 }

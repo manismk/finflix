@@ -1,14 +1,19 @@
 import { PlayArrow } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { useHistory } from "../../context";
 import "./horizontalCard.css";
 
 export const HorizontalCard = ({ video }) => {
   const navigate = useNavigate();
+  const { addToHistory } = useHistory();
   return (
     <div className="horizontal--card">
       <div
         className="thumbnail--container"
-        onClick={() => navigate(`/videos/${video._id}`)}
+        onClick={() => {
+          navigate(`/videos/${video._id}`);
+          addToHistory(video);
+        }}
       >
         <img
           className="img--res"

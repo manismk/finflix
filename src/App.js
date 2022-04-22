@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Navbar, RequiresAuth } from "./components";
 import { routes } from "./constant";
 import {
+  History,
   Likes,
   Login,
   Profile,
@@ -27,6 +28,7 @@ function App() {
             <Route element={<RequiresAuth />}>
               <Route path={routes.PROFILE_PAGE} element={<Profile />} />
               <Route path={routes.LIKED_PAGE} element={<Likes />} />
+              <Route path={routes.HISTORY_PAGE} element={<History />} />
             </Route>
             <Route path={"/mock"} element={<MockMan />} />
           </Routes>

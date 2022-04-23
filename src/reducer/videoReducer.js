@@ -13,6 +13,18 @@ export const videoReducer = (state, action) => {
         videos: getCategoryVideos(state.allVideos, action.payload.category),
         category: action.payload.category,
       };
+    case videoContextConstant.SHOW_PLAYLIST_MODAL:
+      return {
+        ...state,
+        showPlaylistModal: true,
+        currentVideo: action.payload.video,
+      };
+    case videoContextConstant.CLOSE_PLAYLIST_MODAL:
+      return {
+        ...state,
+        showPlaylistModal: false,
+        currentVideo: action.payload.video,
+      };
     default:
       return state;
   }

@@ -7,7 +7,8 @@ import {
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { HorizontalCard, Loader } from "../../components";
+import { HorizontalCard, Loader, PlaylistModal } from "../../components";
+import { videoContextConstant } from "../../constant";
 import { useAuth, useLikes, useVideos } from "../../context";
 import {
   getSingleVideo,
@@ -19,7 +20,7 @@ import "./singleVideo.css";
 
 export const SingleVideo = () => {
   const params = useParams();
-  const { videoState } = useVideos();
+  const { videoState, videoDispatch } = useVideos();
   const { likedVideos, likeVideo, removeLike, likeLoading } = useLikes();
   const { authData } = useAuth();
   const navigate = useNavigate();
@@ -120,7 +121,20 @@ export const SingleVideo = () => {
                     <WatchLaterOutlined />
                     <p className="action--title">Watch Later</p>
                   </button>
-                  <button className="btn icon--btn  video--action">
+                  <button
+                    className="btn icon--btn  video--action"
+                    onClick={() =>
+                      authData.isLoggedIn
+                        ? videoDispatch({
+                            type: videoContextConstant.SHOW_PLAYLIST_MODAL,
+                            payload: { video: data.video },
+                          })
+                        : navigate("/login", {
+                            state: { from: location },
+                            replace: true,
+                          })
+                    }
+                  >
                     <PlaylistAdd />
                     <p className="action--title">Playlist </p>
                   </button>
@@ -166,6 +180,7 @@ export const SingleVideo = () => {
       ) : (
         "Error"
       )}
+      {videoState.showPlaylistModal && <PlaylistModal />}
     </div>
   );
 };

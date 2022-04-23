@@ -16,7 +16,7 @@ export const VideoCard = ({
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="card video-card" onMouseLeave={() => setShowMenu(false)}>
+    <div className="card video-card">
       <div
         className="thumbnail--container"
         onClick={() => {
@@ -62,7 +62,7 @@ export const VideoCard = ({
           </button>
         )}
       </div>
-      {showMenu && <VideoCardMenu />}
+      {showMenu && <VideoCardMenu video={videoDetails} />}
     </div>
   );
 };

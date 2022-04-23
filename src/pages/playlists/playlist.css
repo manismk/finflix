@@ -1,0 +1,15 @@
+.playlist--card {
+  background-color: var(--accent-color-dark);
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100%;
+}
+
+.playlist--card .btn {
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem;
+}

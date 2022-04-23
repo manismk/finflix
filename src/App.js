@@ -5,8 +5,10 @@ import {
   History,
   Likes,
   Login,
+  Playlists,
   Profile,
   SignUp,
+  SinglePlaylist,
   SingleVideo,
   VideoListing,
 } from "./pages/";
@@ -29,6 +31,11 @@ function App() {
               <Route path={routes.PROFILE_PAGE} element={<Profile />} />
               <Route path={routes.LIKED_PAGE} element={<Likes />} />
               <Route path={routes.HISTORY_PAGE} element={<History />} />
+              <Route path={routes.PLAYLIST_PAGE} element={<Playlists />} />
+              <Route
+                path={routes.SINGLE_PLAYLIST}
+                element={<SinglePlaylist />}
+              />
             </Route>
             <Route path={"/mock"} element={<MockMan />} />
           </Routes>

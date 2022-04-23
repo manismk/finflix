@@ -1,0 +1,58 @@
+.playlist--modal {
+  position: fixed;
+  background-color: var(--accent-color-dark);
+  min-width: 40%;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.z-25 {
+  z-index: 25;
+}
+
+.z-30 {
+  z-index: 30;
+}
+
+.close--btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.close--btn svg {
+  font-size: 0.9rem;
+}
+
+.playlist--label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.playlist--label input {
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--text-color);
+  background-color: inherit;
+  width: 100%;
+}
+
+.playlist--container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+
+.playlist--container input,
+.playlist--container label {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.playlist--container input[type="checkbox"] {
+  accent-color: var(--primary--color);
+}

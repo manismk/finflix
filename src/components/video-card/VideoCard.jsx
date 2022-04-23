@@ -62,7 +62,7 @@ export const VideoCard = ({
           </button>
         )}
       </div>
-      {showMenu && <VideoCardMenu />}
+      {showMenu && <VideoCardMenu video={videoDetails} />}
     </div>
   );
 };

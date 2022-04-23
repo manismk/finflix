@@ -6,3 +6,4 @@ export { validatePassword } from "./validatePassword";
 export { getSingleVideo } from "./getSingleVideo";
 export { getCreatorVideos } from "./getCreatorVideos";
 export { getRecommendedVideos } from "./getRecommendedVideos";
+export { getSinglePlaylist } from "./getSinglePlaylist";

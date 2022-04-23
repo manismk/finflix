@@ -1,4 +1,4 @@
-import { Filters, Loader, VideoCard } from "../../components";
+import { Filters, Loader, PlaylistModal, VideoCard } from "../../components";
 import "./videoListing.css";
 import { useVideos } from "../../context/";
 
@@ -15,6 +15,7 @@ export const VideoListing = () => {
         ))}
       </div>
       {videoState.isLoading && <Loader />}
+      {videoState.showPlaylistModal && <PlaylistModal />}
     </>
   );
   ``;

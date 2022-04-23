@@ -11,6 +11,8 @@ const VideoProvider = ({ children }) => {
     category: "all",
     isLoading: false,
     allVideos: [],
+    showPlaylistModal: false,
+    currentVideo: {},
   });
 
   useEffect(() => {

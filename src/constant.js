@@ -8,10 +8,13 @@ export const routes = {
   SIGNUP_PAGE: "/signUp",
   PROFILE_PAGE: "/profile",
   SINGLE_PAGE: "/videos/:videoId",
+  SINGLE_PLAYLIST: "/playlists/:playlistId",
 };
 
 export const videoContextConstant = {
   INITIAL_LOAD: "INITIAL_LOAD",
   CATEGORY_CHANGE: "CATEGORY_CHANGE",
   LOADING_CHANGE: "LOADING_CHANGE",
+  SHOW_PLAYLIST_MODAL: "SHOW_PLAYLIST_MODAL",
+  CLOSE_PLAYLIST_MODAL: "CLOSE_PLAYLIST_MODAL",
 };

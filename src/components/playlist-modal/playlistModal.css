@@ -52,3 +52,7 @@
   margin-right: 0.5rem;
   cursor: pointer;
 }
+
+.playlist--container input[type="checkbox"] {
+  accent-color: var(--primary--color);
+}

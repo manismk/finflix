@@ -1,5 +1,5 @@
 import { videoContextConstant } from "../constant";
-import { getCategoryVideos } from "../utils";
+import { getCategoryVideos, getSearchResults } from "../utils";
 
 export const videoReducer = (state, action) => {
   switch (action.type) {
@@ -10,7 +10,10 @@ export const videoReducer = (state, action) => {
     case videoContextConstant.CATEGORY_CHANGE:
       return {
         ...state,
-        videos: getCategoryVideos(state.allVideos, action.payload.category),
+        videos: getSearchResults(
+          getCategoryVideos(state.allVideos, action.payload.category),
+          state.searchText
+        ),
         category: action.payload.category,
       };
     case videoContextConstant.SHOW_PLAYLIST_MODAL:
@@ -24,6 +27,16 @@ export const videoReducer = (state, action) => {
         ...state,
         showPlaylistModal: false,
         currentVideo: action.payload.video,
+      };
+
+    case videoContextConstant.SEARCH_VIDEO:
+      return {
+        ...state,
+        videos: getSearchResults(
+          getCategoryVideos(state.allVideos, state.category),
+          action.payload.search
+        ),
+        searchText: action.payload.search,
       };
     default:
       return state;

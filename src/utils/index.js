@@ -7,3 +7,4 @@ export { getSingleVideo } from "./getSingleVideo";
 export { getCreatorVideos } from "./getCreatorVideos";
 export { getRecommendedVideos } from "./getRecommendedVideos";
 export { getSinglePlaylist } from "./getSinglePlaylist";
+export { getSearchResults } from "./getSearchResults";

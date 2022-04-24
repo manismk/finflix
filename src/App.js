@@ -11,6 +11,7 @@ import {
   SinglePlaylist,
   SingleVideo,
   VideoListing,
+  WatchLater,
 } from "./pages/";
 import MockMan from "mockman-js";
 import { ToastContainer } from "react-toastify";
@@ -36,6 +37,7 @@ function App() {
                 path={routes.SINGLE_PLAYLIST}
                 element={<SinglePlaylist />}
               />
+              <Route path={routes.WATCH_LATER_PAGE} element={<WatchLater />} />
             </Route>
             <Route path={"/mock"} element={<MockMan />} />
           </Routes>

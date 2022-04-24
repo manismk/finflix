@@ -4,12 +4,13 @@ import {
   WatchLaterOutlined,
   PlaylistAdd,
   ThumbUp,
+  WatchLater,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { HorizontalCard, Loader, PlaylistModal } from "../../components";
 import { videoContextConstant } from "../../constant";
-import { useAuth, useLikes, useVideos } from "../../context";
+import { useAuth, useLikes, useVideos, useWatchLater } from "../../context";
 import {
   getSingleVideo,
   getRecommendedVideos,
@@ -22,6 +23,12 @@ export const SingleVideo = () => {
   const params = useParams();
   const { videoState, videoDispatch } = useVideos();
   const { likedVideos, likeVideo, removeLike, likeLoading } = useLikes();
+  const {
+    addToWatchLater,
+    watchLater,
+    removeFromWatchLater,
+    watchLaterLoading,
+  } = useWatchLater();
   const { authData } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,6 +39,7 @@ export const SingleVideo = () => {
     recommendedVideos: [],
     creatorVideos: [],
     isLiked: false,
+    isWatchLater: false,
   });
   const [showMore, setShowMore] = useState(false);
 
@@ -59,6 +67,12 @@ export const SingleVideo = () => {
       ? setData((prev) => ({ ...prev, isLiked: true }))
       : setData((prev) => ({ ...prev, isLiked: false }));
   }, [likedVideos, params]);
+
+  useEffect(() => {
+    watchLater.find((watchLaterVideo) => watchLaterVideo._id === params.videoId)
+      ? setData((prev) => ({ ...prev, isWatchLater: true }))
+      : setData((prev) => ({ ...prev, isWatchLater: false }));
+  }, [watchLater, params]);
 
   return (
     <div className="grid--70--30 m-v-2">
@@ -117,10 +131,36 @@ export const SingleVideo = () => {
                       <p className="action--title">Like</p>
                     </button>
                   )}
-                  <button className="btn icon--btn  video--action">
-                    <WatchLaterOutlined />
-                    <p className="action--title">Watch Later</p>
-                  </button>
+                  {data.isWatchLater ? (
+                    <button
+                      className={`btn icon--btn  video--action active ${
+                        watchLaterLoading ? "btn--disabled" : ""
+                      }`}
+                      onClick={() => removeFromWatchLater(data.video._id)}
+                      disabled={watchLaterLoading}
+                    >
+                      <WatchLater />
+                      <p className="action--title">In Watch Later</p>
+                    </button>
+                  ) : (
+                    <button
+                      className={`btn icon--btn  video--action ${
+                        watchLaterLoading ? "btn--disabled" : ""
+                      }`}
+                      onClick={() =>
+                        authData.isLoggedIn
+                          ? addToWatchLater(data.video)
+                          : navigate("/login", {
+                              state: { from: location },
+                              replace: true,
+                            })
+                      }
+                      disabled={watchLaterLoading}
+                    >
+                      <WatchLaterOutlined />
+                      <p className="action--title">Watch Later</p>
+                    </button>
+                  )}
                   <button
                     className="btn icon--btn  video--action"
                     onClick={() =>

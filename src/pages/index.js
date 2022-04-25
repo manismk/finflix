@@ -7,3 +7,4 @@ export { Likes } from "./likes/Likes";
 export { History } from "./history/History";
 export { Playlists } from "./playlists/Playlists";
 export { SinglePlaylist } from "./single-playlist/SinglePlaylist";
+export { WatchLater } from "./watch-later/WatchLater";

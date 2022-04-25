@@ -13,6 +13,7 @@ const VideoProvider = ({ children }) => {
     allVideos: [],
     showPlaylistModal: false,
     currentVideo: {},
+    searchText: "",
   });
 
   useEffect(() => {

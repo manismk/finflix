@@ -13,8 +13,29 @@
   padding: 0.2rem 0.6rem;
   border-radius: 2rem;
   border: 1px solid var(--primary--color);
+  font-size: 1.1rem;
 }
 
-.category--radio:checked + .radio--label {
+.category--radio:checked + .radio--label,
+.radio--label:hover {
   background-color: var(--primary--color);
+}
+
+.filter--container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.filter--container .search {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--primary--color);
+  font-size: 1.1rem;
+  padding: 0.2rem;
+  color: var(--text-color);
+  min-width: 30%;
+  letter-spacing: 1px;
 }

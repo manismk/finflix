@@ -8,3 +8,4 @@ export { History } from "./history/History";
 export { Playlists } from "./playlists/Playlists";
 export { SinglePlaylist } from "./single-playlist/SinglePlaylist";
 export { WatchLater } from "./watch-later/WatchLater";
+export { Error404 } from "./error404/Error404";

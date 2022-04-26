@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Navbar, RequiresAuth } from "./components";
 import { routes } from "./constant";
 import {
+  Error404,
   History,
   Likes,
   Login,
@@ -53,6 +54,7 @@ function App() {
               />
               <Route path={routes.WATCH_LATER_PAGE} element={<WatchLater />} />
             </Route>
+            <Route path="*" element={<Error404 />} />
             <Route path={"/mock"} element={<MockMan />} />
           </Routes>
           <ToastContainer

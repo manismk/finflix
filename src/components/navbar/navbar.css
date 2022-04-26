@@ -30,3 +30,9 @@ svg {
   align-items: center;
   text-decoration: none;
 }
+
+.navbar--action--container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

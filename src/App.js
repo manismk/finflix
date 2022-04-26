@@ -16,12 +16,26 @@ import {
 import MockMan from "mockman-js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+
+const getTheme = () => {
+  if (localStorage && localStorage.getItem("finFlixTheme") !== null) {
+    return localStorage.getItem("finFlixTheme");
+  }
+  return "dark";
+};
 
 function App() {
+  const [theme, setTheme] = useState(getTheme());
   return (
-    <div className="App  dark--theme">
+    <div className={`App  ${theme}--theme`}>
       <div className="container--100">
-        <Navbar />
+        <Navbar
+          theme={theme}
+          changeHandler={() =>
+            theme === "dark" ? setTheme("light") : setTheme("dark")
+          }
+        />
         <div className="main-container">
           <Routes>
             <Route path={routes.EXPLORE_PAGE} element={<VideoListing />} />

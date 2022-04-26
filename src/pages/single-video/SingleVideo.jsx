@@ -19,6 +19,14 @@ import {
 
 import "./singleVideo.css";
 
+const handleBackClick = (navigate) => {
+  if (window.history.state && window.history.state.idx > 0) {
+    navigate(-1);
+  } else {
+    navigate("/", { replace: true });
+  }
+};
+
 export const SingleVideo = () => {
   const params = useParams();
   const { videoState, videoDispatch } = useVideos();
@@ -80,7 +88,10 @@ export const SingleVideo = () => {
       {data.video !== null ? (
         <>
           <div>
-            <button className="btn btn--fab">
+            <button
+              className="btn btn--fab"
+              onClick={() => handleBackClick(navigate)}
+            >
               <KeyboardBackspace />
             </button>
             <div className="video--container m-t-1">

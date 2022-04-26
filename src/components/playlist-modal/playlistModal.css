@@ -56,3 +56,14 @@
 .playlist--container input[type="checkbox"] {
   accent-color: var(--primary--color);
 }
+
+@media only screen and (max-width: 900px) {
+  .playlist--modal {
+    min-width: 60%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .playlist--modal {
+    min-width: 80%;
+  }
+}

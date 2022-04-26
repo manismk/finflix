@@ -83,13 +83,13 @@
   bottom: 0.3rem;
   width: 70%;
   background-color: var(--accent-color-light);
-  padding: 0.2rem;
+  padding: 1rem;
 }
 
 .video--card--menu .btn {
   font-size: 1rem;
   padding: 0.3rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
   border-color: var(--text-color);
   background-color: inherit;
   color: var(--text-color);

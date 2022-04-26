@@ -31,6 +31,11 @@ svg {
   text-decoration: none;
 }
 
+.nav--item:hover,
+.nav--item:hover svg {
+  color: var(--primary--color);
+}
+
 .navbar--action--container {
   display: flex;
   align-items: center;

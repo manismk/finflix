@@ -1,9 +1,9 @@
 # Finflix - Enhance your financial knowledge
-**Finflix is a video library for finance content. Start your basic financial knowledge with finflix and keep growing your wealth. **
+**Finflix is a video library for finance content. Start your basic financial knowledge with finflix and keep growing your wealth.**
 
 **Take a look at [Finflix](https://finflix.netlify.app/)**
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6fe2b50a-6401-4ad3-adab-780deb7bb405/deploy-status)](https://app.netlify.com/sites/finflix/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/adb06124-37e8-4b24-8feb-e05f8efb1426/deploy-status)](https://app.netlify.com/sites/finflix/deploys)
 
 ---
 

@@ -1,6 +1,6 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Navbar, RequiresAuth } from "./components";
-import { routes } from "./constant";
+import { routes, videoContextConstant } from "./constant";
 import {
   Error404,
   History,
@@ -17,7 +17,8 @@ import {
 import MockMan from "mockman-js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useVideos } from "../src/context/index";
 
 const getTheme = () => {
   if (localStorage && localStorage.getItem("finFlixTheme") !== null) {
@@ -28,6 +29,17 @@ const getTheme = () => {
 
 function App() {
   const [theme, setTheme] = useState(getTheme());
+  const { pathname } = useLocation();
+  const { videoState, videoDispatch } = useVideos();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (videoState.showPlaylistModal) {
+      videoDispatch({
+        type: videoContextConstant.CLOSE_PLAYLIST_MODAL,
+        payload: { video: {} },
+      });
+    }
+  }, [pathname]);
   return (
     <div className={`App  ${theme}--theme`}>
       <div className="container--100">

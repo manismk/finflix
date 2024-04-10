@@ -14,7 +14,6 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLSA3Tow9_-RTNU6WslhjukZuknVu3JzcGiCMumw5g=s88-c-k-c0x00ffffff-no-rj",
     duration: "1:35:06",
     category: "stocks",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/Xn7KWR9EOGQ/mqdefault_6s.webp?du=3000&sqp=CKDS7pIG&rs=AOn4CLB2gR-EzNTATePR9HHpk-8dc9zYLg`,
   },
   {
     _id: "PdduvP_KlcI",
@@ -26,7 +25,6 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLSA3Tow9_-RTNU6WslhjukZuknVu3JzcGiCMumw5g=s88-c-k-c0x00ffffff-no-rj",
     duration: "24:26",
     category: "crypto",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/PdduvP_KlcI/mqdefault_6s.webp?du=3000&sqp=CLKZ75IG&rs=AOn4CLDNy3sIzR4Co3vsOPpcEH0qbqNSzA`,
   },
   {
     _id: "tHxwyWnNu0c",
@@ -38,7 +36,6 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLSA3Tow9_-RTNU6WslhjukZuknVu3JzcGiCMumw5g=s88-c-k-c0x00ffffff-no-rj",
     duration: "13:06",
     category: "personal-finance",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/tHxwyWnNu0c/mqdefault_6s.webp?du=3000&sqp=CLP77pIG&rs=AOn4CLBFT59SDmbuxibQVXDK-1APPiHLtQ`,
   },
   {
     _id: "8JTBeh1IbK8",
@@ -50,7 +47,6 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLSA3Tow9_-RTNU6WslhjukZuknVu3JzcGiCMumw5g=s88-c-k-c0x00ffffff-no-rj",
     duration: "12:46",
     category: "trading",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/8JTBeh1IbK8/mqdefault_6s.webp?du=3000&sqp=CKCg75IG&rs=AOn4CLDJSy7Znbp6Yh7oxuAbrLzCYZdH1A`,
   },
   {
     _id: "hIYSxqrraWA",
@@ -62,7 +58,6 @@ export const videos = [
       "https://yt3.ggpht.com/X9eoDIB9cgb1s-kvATRs1lQDcU4Fjc15NDV9s9FF8ck7IsA8u7OdijaernoDV9LLdePgjlt_=s88-c-k-c0x00ffffff-no-rj",
     duration: "19:33",
     category: "stocks",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/hIYSxqrraWA/mqdefault_6s.webp?du=3000&sqp=CKCY75IG&rs=AOn4CLAHFrHmXFFm3nJFfG5BK9Gm-njagQ`,
   },
   {
     _id: "e0frvHLHMGI",
@@ -74,7 +69,6 @@ export const videos = [
       "https://yt3.ggpht.com/X9eoDIB9cgb1s-kvATRs1lQDcU4Fjc15NDV9s9FF8ck7IsA8u7OdijaernoDV9LLdePgjlt_=s88-c-k-c0x00ffffff-no-rj",
     duration: "14:37",
     category: "crypto",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/e0frvHLHMGI/mqdefault_6s.webp?du=3000&sqp=CMiJ75IG&rs=AOn4CLA_Yh4qfxPn43ctv1fpFvqFzbKDbA`,
   },
   {
     _id: "nbrkmJTuGoY",
@@ -87,7 +81,6 @@ export const videos = [
       "https://yt3.ggpht.com/X9eoDIB9cgb1s-kvATRs1lQDcU4Fjc15NDV9s9FF8ck7IsA8u7OdijaernoDV9LLdePgjlt_=s88-c-k-c0x00ffffff-no-rj",
     duration: "14:04",
     category: "personal-finance",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/nbrkmJTuGoY/mqdefault_6s.webp?du=3000&sqp=CKaR75IG&rs=AOn4CLDaiiXTMdFZwgA872iKFB9_9Yg66A`,
   },
   {
     _id: "uYNfT6B2Hqg",
@@ -100,7 +93,6 @@ export const videos = [
       "https://yt3.ggpht.com/X9eoDIB9cgb1s-kvATRs1lQDcU4Fjc15NDV9s9FF8ck7IsA8u7OdijaernoDV9LLdePgjlt_=s88-c-k-c0x00ffffff-no-rj",
     duration: "15:59",
     category: "personal-finance",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/uYNfT6B2Hqg/mqdefault_6s.webp?du=3000&sqp=CLCb75IG&rs=AOn4CLBVf7CjSIwhsZLoTl41fiFMzejFyg`,
   },
   {
     _id: "21Pm9MB6kOk",
@@ -109,10 +101,9 @@ export const videos = [
     description:
       "In this video I cover everything that you need to know for investing in stock market - key terms, who controls it, how you become an owner of a company.",
     creatorImgUrl:
-      "https://yt3.ggpht.com/VI0OvMwpPQPFGoHAQOHsvtEcFWg-_YzFBhoeohr2CRz1T21Ja4unTGte1Gz6TnDUgVX9wcOG=s88-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/2vRGvk7sFSAuczyPSgiySnfQSu9Abl7wF6HLW23vNcrHmnA6y6oZB6g2TYk_BtPrZPSKVz3AVA=s176-c-k-c0x00ffffff-no-rj-mo",
     duration: "21:04",
     category: "stocks",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/21Pm9MB6kOk/mqdefault_6s.webp?du=3000&sqp=CPmQ75IG&rs=AOn4CLCoNgMljX5yS9qVb788g-fZNJ30lQ`,
   },
   {
     _id: "t9UPE8CDuFs",
@@ -121,22 +112,20 @@ export const videos = [
     description:
       "What are candlesticks and how can you use them to make money in the stock market? I explain it all in this video! Do watch it till the very end to understand different patterns around candlesticks and to NOT commit any blunders while doing the technical analysis!",
     creatorImgUrl:
-      "https://yt3.ggpht.com/VI0OvMwpPQPFGoHAQOHsvtEcFWg-_YzFBhoeohr2CRz1T21Ja4unTGte1Gz6TnDUgVX9wcOG=s88-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/2vRGvk7sFSAuczyPSgiySnfQSu9Abl7wF6HLW23vNcrHmnA6y6oZB6g2TYk_BtPrZPSKVz3AVA=s176-c-k-c0x00ffffff-no-rj-mo",
     duration: "21:19",
     category: "trading",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/t9UPE8CDuFs/mqdefault_6s.webp?du=3000&sqp=CJiS75IG&rs=AOn4CLC7KgGra4zA340ScqJLA2jYGcq21A`,
   },
   {
-    _id: "PHxVp0eEfPs",
-    title: "Make money via crypto currency",
+    _id: "ByVCe0BmcMQ",
+    title: "Where am I investing? | Cryptocurrency Mini Course",
     creator: "Akshat Shrivastava",
     description:
       "The world of cryptocurrency has intrigued a lot of people. It's a new technology that is seeming to shape the modern world. Thus I am releasing a FREE MINI COURSE on cryptocurrency which will help you know everything about cryptos - from basics to building wealth with it.",
     creatorImgUrl:
-      "https://yt3.ggpht.com/VI0OvMwpPQPFGoHAQOHsvtEcFWg-_YzFBhoeohr2CRz1T21Ja4unTGte1Gz6TnDUgVX9wcOG=s88-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/2vRGvk7sFSAuczyPSgiySnfQSu9Abl7wF6HLW23vNcrHmnA6y6oZB6g2TYk_BtPrZPSKVz3AVA=s176-c-k-c0x00ffffff-no-rj-mo",
     duration: "21:19",
     category: "crypto",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/PHxVp0eEfPs/mqdefault_6s.webp?du=3000&sqp=CPTV7pIG&rs=AOn4CLDNiPsmrDRiLLB0rK8aQb100ub_Gw`,
   },
   {
     _id: "BUJv7ehejpU",
@@ -145,10 +134,9 @@ export const videos = [
     description:
       "Health is the most important part of an individual's life. Without health, there is nothing. But buying a perfect health insurance is not as easy as it seems. Given the complexity of an insurance policy and with so many options being available, it is but natural that you might get bogged down and give up buying an insurance altogether. Thus, in this video, I break down the concept of health insurance in simple parts and try to explain the process of getting an appropriate health insurance which will be suitable to your needs!",
     creatorImgUrl:
-      "https://yt3.ggpht.com/VI0OvMwpPQPFGoHAQOHsvtEcFWg-_YzFBhoeohr2CRz1T21Ja4unTGte1Gz6TnDUgVX9wcOG=s88-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/2vRGvk7sFSAuczyPSgiySnfQSu9Abl7wF6HLW23vNcrHmnA6y6oZB6g2TYk_BtPrZPSKVz3AVA=s176-c-k-c0x00ffffff-no-rj-mo",
     duration: "17:02",
     category: "personal-finance",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/PHxVp0eEfPs/mqdefault_6s.webp?du=3000&sqp=CPTV7pIG&rs=AOn4CLDNiPsmrDRiLLB0rK8aQb100ub_Gw`,
   },
   {
     _id: "QQsFZxFV2V4",
@@ -160,7 +148,6 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLQ52FCALBdrms4e2OvysVt8olq_YVzLoj6iPDTqlQ=s88-c-k-c0x00ffffff-no-rj",
     duration: "33:25",
     category: "personal-finance",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/QQsFZxFV2V4/mqdefault_6s.webp?du=3000&sqp=CLre7pIG&rs=AOn4CLCMCLE7BsJIRcemWntLyc_UNSpGbA`,
   },
   {
     _id: "mvaPJuEUqWI",
@@ -172,7 +159,6 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLQ52FCALBdrms4e2OvysVt8olq_YVzLoj6iPDTqlQ=s88-c-k-c0x00ffffff-no-rj",
     duration: "24:42",
     category: "personal-finance",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/mvaPJuEUqWI/mqdefault_6s.webp?du=3000&sqp=CPSi75IG&rs=AOn4CLA8P5Ixfrbe-52jiffrm7LuB0ry6A`,
   },
   {
     _id: "no4woElIPrk",
@@ -184,7 +170,6 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLQ52FCALBdrms4e2OvysVt8olq_YVzLoj6iPDTqlQ=s88-c-k-c0x00ffffff-no-rj",
     duration: "12:32",
     category: "crypto",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/no4woElIPrk/mqdefault_6s.webp?du=3000&sqp=CJHy7pIG&rs=AOn4CLCs6CKEjbTQCu4wJJchpGNjtWoAUQ`,
   },
   {
     _id: "T-runis3umU",
@@ -196,7 +181,6 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLT4QTIFXfCeO5rGYhr3b7MAim2n4oeC7_BiUNtq2g=s88-c-k-c0x00ffffff-no-rj",
     duration: "14:30",
     category: "stocks",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/T-runis3umU/mqdefault_6s.webp?du=3000&sqp=CM6b75IG&rs=AOn4CLA50ndBHzST8VM674ZXOjGEB1bP5A`,
   },
   {
     _id: "l1hO5d-V3tU",
@@ -208,7 +192,6 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLT4QTIFXfCeO5rGYhr3b7MAim2n4oeC7_BiUNtq2g=s88-c-k-c0x00ffffff-no-rj",
     duration: "13:35",
     category: "crypto",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/l1hO5d-V3tU/mqdefault_6s.webp?du=3000&sqp=CJaQ75IG&rs=AOn4CLA5MjX2bi-jUpwdjizjTELY0dyYBA`,
   },
   {
     _id: "1dBbdDwU2MA",
@@ -220,6 +203,5 @@ export const videos = [
       "https://yt3.ggpht.com/ytc/AKedOLT4QTIFXfCeO5rGYhr3b7MAim2n4oeC7_BiUNtq2g=s88-c-k-c0x00ffffff-no-rj",
     duration: "10:01",
     category: "personal-finance",
-    animatedThumbnailUrl: `https://i.ytimg.com/an_webp/pcjZoS2apRw/mqdefault_6s.webp?du=3000&sqp=CMyP75IG&rs=AOn4CLCF_h6S2S_D3wXpzWLDSiFgDrRqHg`,
   },
 ];

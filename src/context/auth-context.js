@@ -22,23 +22,23 @@ const AuthProvider = ({ children }) => {
   const handleLogin = (userMail, password) => {
     (async () => {
       try {
-        const { status, data } = await axios.post("/api/auth/login", {
-          email: userMail,
+        const { status, data } = await axios.post("/auth/login", {
+          username: userMail,
           password: password,
         });
         if (status === 200 || status === 201) {
-          localStorage.setItem("finFlixToken", data.encodedToken);
-          localStorage.setItem("finFlixUser", JSON.stringify(data.foundUser));
+          localStorage.setItem("finFlixToken", data.token);
+          localStorage.setItem("finFlixUser", JSON.stringify(data.user));
           setAuthData((prev) => ({
             ...prev,
             isLoggedIn: true,
-            userData: data.foundUser,
+            userData: data.user,
           }));
 
           navigate(from, { replace: true });
           setAuthData((prev) => ({ ...prev, isLoggedIn: true }));
           toast.success(
-            `Welcome Back ${data.foundUser.firstName} ${data.foundUser.lastName}`
+            `Welcome Back ${data.user.first_name} ${data.user.last_name}`
           );
         }
       } catch (e) {
@@ -51,23 +51,23 @@ const AuthProvider = ({ children }) => {
   const handleSignUp = (firstName, lastName, userMail, password) => {
     (async () => {
       try {
-        const { status, data } = await axios.post("/api/auth/signup", {
-          firstName: firstName,
-          lastName: lastName,
-          email: userMail,
+        const { status, data } = await axios.post("/auth/signup", {
+          first_name: firstName,
+          last_name: lastName,
+          username: userMail,
           password: password,
         });
         if (status === 201) {
-          localStorage.setItem("finFlixToken", data.encodedToken);
-          localStorage.setItem("finFlixUser", JSON.stringify(data.createdUser));
+          localStorage.setItem("finFlixToken", data.token);
+          localStorage.setItem("finFlixUser", JSON.stringify(data.user));
           setAuthData((prev) => ({
             ...prev,
             isLoggedIn: true,
-            userData: data.createdUser,
+            userData: data.user,
           }));
           navigate(from, { replace: true });
           toast.success(
-            `Let's enhance Your Financial Knowledge ${data.createdUser.firstName} ${data.createdUser.lastName} `
+            `Let's enhance Your Financial Knowledge ${data.user.first_name} ${data.user.last_name} `
           );
         }
       } catch (e) {

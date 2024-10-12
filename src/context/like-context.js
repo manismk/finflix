@@ -15,11 +15,11 @@ const LikesProvider = ({ children }) => {
     if (authData.isLoggedIn) {
       (async () => {
         try {
-          const { data, status } = await axios.get(`/api/user/likes`, {
+          const { data, status } = await axios.get(`/user/liked-videos`, {
             headers: { authorization: localStorage.getItem("finFlixToken") },
           });
           if (status === 200) {
-            setLikedVideos(data.likes);
+            setLikedVideos(data);
           }
         } catch (e) {
           setLikedVideos([]);
@@ -36,13 +36,9 @@ const LikesProvider = ({ children }) => {
     setLikeLoading(true);
     try {
       const { status, data } = await axios.post(
-        "/api/user/likes",
-        {
-          video,
-        },
-        {
-          headers: { authorization: localStorage.getItem("finFlixToken") },
-        }
+        "/user/like",
+        { video_id: video?._id },
+        { headers: { authorization: localStorage.getItem("finFlixToken") } }
       );
       if (status === 201) {
         setLikedVideos(data.likes);
@@ -58,8 +54,9 @@ const LikesProvider = ({ children }) => {
   const removeLike = async (videoId) => {
     setLikeLoading(true);
     try {
-      const { data, status } = await axios.delete(
-        `/api/user/likes/${videoId}`,
+      const { data, status } = await axios.post(
+        `/user/dislike`,
+        { video_id: videoId },
         {
           headers: { authorization: localStorage.getItem("finFlixToken") },
         }

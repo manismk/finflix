@@ -5,6 +5,8 @@ import { videoContextConstant } from "../constant";
 
 const VideoContext = createContext();
 
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
+
 const VideoProvider = ({ children }) => {
   const [videoState, videoDispatch] = useReducer(videoReducer, {
     videos: [],
@@ -24,11 +26,11 @@ const VideoProvider = ({ children }) => {
           payload: true,
         });
 
-        const { data, status } = await axios.get("/api/videos");
+        const { data, status } = await axios.get(`/video/all`);
         if (status === 200) {
           videoDispatch({
             type: videoContextConstant.INITIAL_LOAD,
-            payload: data.videos,
+            payload: data,
           });
         } else
           throw new Error(`status code unhandled in initial load ${status}`);

@@ -16,7 +16,7 @@ export const Playlists = () => {
             <div className="playlist--card" key={playlistItem._id}>
               <div className="playlist--content">
                 <h4 className="heading--3 playlist--title m-b-1">
-                  {playlistItem.title}
+                  {playlistItem.name}
                 </h4>
                 <p className="playlist--videos">
                   {playlistItem.videos.length} videos

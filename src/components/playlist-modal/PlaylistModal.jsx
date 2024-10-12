@@ -97,7 +97,7 @@ export const PlaylistModal = () => {
                           : true
                       }
                     />
-                    {playlistItem.title}
+                    {playlistItem.name}
                   </label>
                 ))}
               </div>

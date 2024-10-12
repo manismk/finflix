@@ -14,11 +14,11 @@ const WatchLaterProvider = ({ children }) => {
     if (authData.isLoggedIn) {
       (async () => {
         try {
-          const { data, status } = await axios.get(`/api/user/watchlater`, {
+          const { data, status } = await axios.get(`/user/watch-later`, {
             headers: { authorization: localStorage.getItem("finFlixToken") },
           });
           if (status === 200) {
-            setWatchLater(data.watchlater);
+            setWatchLater(data);
           }
         } catch (e) {
           setWatchLater([]);
@@ -35,13 +35,9 @@ const WatchLaterProvider = ({ children }) => {
     setWatchLaterLoading(true);
     try {
       const { status, data } = await axios.post(
-        "/api/user/watchlater",
-        {
-          video,
-        },
-        {
-          headers: { authorization: localStorage.getItem("finFlixToken") },
-        }
+        "/user/watch-later",
+        { video_id: video?._id },
+        { headers: { authorization: localStorage.getItem("finFlixToken") } }
       );
       if (status === 201) {
         setWatchLater(data.watchlater);
@@ -57,12 +53,10 @@ const WatchLaterProvider = ({ children }) => {
   const removeFromWatchLater = async (videoId) => {
     setWatchLaterLoading(true);
     try {
-      const { status, data } = await axios.delete(
-        `/api/user/watchlater/${videoId}`,
-        {
-          headers: { authorization: localStorage.getItem("finFlixToken") },
-        }
-      );
+      const { status, data } = await axios.delete(`/user/watch-later`, {
+        headers: { authorization: localStorage.getItem("finFlixToken") },
+        data: { video_id: videoId },
+      });
       if (status === 200) {
         setWatchLater(data.watchlater);
       } else throw new Error(`Unhandled response status ${status}`);

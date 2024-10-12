@@ -26,7 +26,7 @@ export const SinglePlaylist = () => {
       {currentPlaylist.isLoading && <Loader />}
       {currentPlaylist.playlist !== null ? (
         <>
-          <h1 className="text--center m-v-2">{`${currentPlaylist?.playlist?.title} (${currentPlaylist?.playlist?.videos?.length})`}</h1>
+          <h1 className="text--center m-v-2">{`${currentPlaylist?.playlist?.name} (${currentPlaylist?.playlist?.videos?.length})`}</h1>
           {currentPlaylist?.playlist?.videos?.length !== 0 ? (
             <div className="grid grid--3--cols">
               {currentPlaylist?.playlist?.videos?.map((playlistVideo) => (

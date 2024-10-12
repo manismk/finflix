@@ -14,7 +14,6 @@ import {
   VideoListing,
   WatchLater,
 } from "./pages/";
-import MockMan from "mockman-js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
@@ -67,7 +66,6 @@ function App() {
               <Route path={routes.WATCH_LATER_PAGE} element={<WatchLater />} />
             </Route>
             <Route path="*" element={<Error404 />} />
-            <Route path={"/mock"} element={<MockMan />} />
           </Routes>
           <ToastContainer
             position="top-right"

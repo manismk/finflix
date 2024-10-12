@@ -13,11 +13,11 @@ const HistoryProvider = ({ children }) => {
     if (authData.isLoggedIn) {
       (async () => {
         try {
-          const { data, status } = await axios.get(`/api/user/history`, {
+          const { data, status } = await axios.get(`/user/history`, {
             headers: { authorization: localStorage.getItem("finFlixToken") },
           });
           if (status === 200) {
-            setHistoryVideos(data.history.reverse());
+            setHistoryVideos(data);
           }
         } catch (e) {
           setHistoryVideos([]);
@@ -31,55 +31,38 @@ const HistoryProvider = ({ children }) => {
   }, [authData.isLoggedIn]);
 
   const addToHistory = async (video) => {
-    const alreadyInHistory = historyVideos.find(
-      (historyVideo) => historyVideo._id === video._id
-    );
-    if (alreadyInHistory) {
-      setHistoryVideos((prev) => [
-        alreadyInHistory,
-        ...prev.filter((historyVideo) => historyVideo._id !== video._id),
-      ]);
-    } else {
-      try {
-        const { status, data } = await axios.post(
-          "/api/user/history",
-          { video },
-          {
-            headers: {
-              authorization: localStorage.getItem("finFlixToken"),
-            },
-          }
-        );
-        if (status === 201) setHistoryVideos(data.history.reverse());
-      } catch (e) {
-        console.error("Error in Adding History", e);
-      }
+    if (!authData.isLoggedIn) return;
+
+    try {
+      const { status, data } = await axios.post(
+        `/user/history/${video?._id}`,
+        {},
+        {
+          headers: { authorization: localStorage.getItem("finFlixToken") },
+        }
+      );
+      if (status === 201) setHistoryVideos(data.history);
+    } catch (e) {
+      console.error("Error in Adding History", e);
     }
   };
 
   const removeFromHistory = async (videoId) => {
     try {
-      const { status, data } = await axios.delete(
-        `/api/user/history/${videoId}`,
-        {
-          headers: {
-            authorization: localStorage.getItem("finFlixToken"),
-          },
-        }
-      );
-      if (status === 200) setHistoryVideos(data.history.reverse());
+      const { status, data } = await axios.delete(`/user/history/${videoId}`, {
+        headers: { authorization: localStorage.getItem("finFlixToken") },
+      });
+      if (status === 200) setHistoryVideos(data.history);
     } catch (e) {
       console.error("Error in Removing History", e);
     }
   };
   const clearHistory = async () => {
     try {
-      const { status, data } = await axios.delete(`/api/user/history/all`, {
-        headers: {
-          authorization: localStorage.getItem("finFlixToken"),
-        },
+      const { status, data } = await axios.delete(`/user/history`, {
+        headers: { authorization: localStorage.getItem("finFlixToken") },
       });
-      if (status === 200) setHistoryVideos(data.history.reverse());
+      if (status === 200) setHistoryVideos(data.history);
     } catch (e) {
       console.error("Error in Removing all History", e);
     }

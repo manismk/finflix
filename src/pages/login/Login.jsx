@@ -68,16 +68,6 @@ export const Login = () => {
             }
           />
 
-          <div className="remember--container m-t-1 m-h-1">
-            <span className="input--standard">
-              <input type="checkbox" id="remember" />
-              <label htmlFor="remember">Remember me</label>
-            </span>
-
-            <Link to="/forgotPassword" className="link primary-color">
-              Forgot Your password
-            </Link>
-          </div>
           <div className="m-t-1 m-h-1">
             <button
               className="btn btn--primary w-100"

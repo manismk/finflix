@@ -13,11 +13,11 @@ const PlaylistProvider = ({ children }) => {
     if (authData.isLoggedIn) {
       (async () => {
         try {
-          const { data, status } = await axios.get(`/api/user/playlists`, {
+          const { data, status } = await axios.get(`/user/playlist`, {
             headers: { authorization: localStorage.getItem("finFlixToken") },
           });
           if (status === 200) {
-            setPlaylist(data.playlists);
+            setPlaylist(data);
           }
         } catch (e) {
           setPlaylist([]);
@@ -33,13 +33,9 @@ const PlaylistProvider = ({ children }) => {
   const addToPlaylist = async (title) => {
     try {
       const { status, data } = await axios.post(
-        "/api/user/playlists",
-        {
-          playlist: { title },
-        },
-        {
-          headers: { authorization: localStorage.getItem("finFlixToken") },
-        }
+        "/user/playlist",
+        { name: title },
+        { headers: { authorization: localStorage.getItem("finFlixToken") } }
       );
       if (status === 201) {
         setPlaylist(data.playlists);
@@ -54,10 +50,8 @@ const PlaylistProvider = ({ children }) => {
   const deleteFromPlaylist = async (playlist) => {
     try {
       const { status, data } = await axios.delete(
-        `/api/user/playlists/${playlist._id}`,
-        {
-          headers: { authorization: localStorage.getItem("finFlixToken") },
-        }
+        `/user/playlist/${playlist._id}`,
+        { headers: { authorization: localStorage.getItem("finFlixToken") } }
       );
       if (status === 200) {
         setPlaylist(data.playlists);
@@ -72,17 +66,13 @@ const PlaylistProvider = ({ children }) => {
   const addVideoToPlaylist = async (playlistItem, video) => {
     try {
       const { data, status } = await axios.post(
-        `/api/user/playlists/${playlistItem._id}`,
-        {
-          video,
-        },
-        {
-          headers: { authorization: localStorage.getItem("finFlixToken") },
-        }
+        `/user/playlist/${playlistItem._id}/${video?._id}`,
+        {},
+        { headers: { authorization: localStorage.getItem("finFlixToken") } }
       );
       if (status === 201) {
         setPlaylist(data.playlists);
-        toast.success(`${video.title} has been added to ${playlistItem.title}`);
+        toast.success(`${video.title} has been added to ${playlistItem.name}`);
       } else throw new Error(`Unhandled response status ${status}`);
     } catch (e) {
       console.error("Error in adding video to playlist", e);
@@ -93,15 +83,13 @@ const PlaylistProvider = ({ children }) => {
   const removeVideoFromPlaylist = async (playlistItem, video) => {
     try {
       const { data, status } = await axios.delete(
-        `/api/user/playlists/${playlistItem._id}/${video._id}`,
-        {
-          headers: { authorization: localStorage.getItem("finFlixToken") },
-        }
+        `/user/playlist/${playlistItem._id}/${video._id}`,
+        { headers: { authorization: localStorage.getItem("finFlixToken") } }
       );
       if (status === 200) {
         setPlaylist(data.playlists);
         toast.success(
-          `${video.title} has been removed from ${playlistItem.title}`
+          `${video.title} has been removed from ${playlistItem.name}`
         );
       } else throw new Error(`Unhandled response status ${status}`);
     } catch (e) {
